@@ -5,10 +5,12 @@ import (
 	"crypto/sha1"
 	"encoding/base64"
 	"fmt"
+	"ioutil"
 	"math/rand"
 	"net/http"
 	"net/url"
 	"sort"
+	"strings"
 	"time"
 )
 
