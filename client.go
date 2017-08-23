@@ -5,7 +5,7 @@ import (
 	"crypto/sha1"
 	"encoding/base64"
 	"fmt"
-	"ioutil"
+	"io/ioutil"
 	"math/rand"
 	"net/http"
 	"net/url"
