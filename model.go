@@ -64,3 +64,10 @@ func (p Params) SetInterface(key string, value interface{}) {
 
 	return
 }
+
+type SendSmsResponse struct {
+	Message   string
+	RequestId string
+	BizId     string
+	Code      string
+}
