@@ -21,10 +21,10 @@ const (
 func SendMessage(userInput *UserParams) (bool, string, error) {
 	params := make(Params)
 	params.Set("AccessKeyId", userInput.AccessKeyId)
-	params.Set("Timestamp", time.Now().Format("2006-01-02T15:04:05Z")) // 格式为：yyyy-MM-dd’T’HH:mm:ss’Z’；时区为：GMT
-	params.Set("SignatureMethod", "HMAC-SHA1")                         // 建议固定值：HMAC-SHA1
-	params.Set("SignatureVersion", "1.0")                              // 建议固定值：1.0
-	params.Set("SignatureNonce", GetRandomString(12))                  // 用于请求的防重放攻击，每次请求唯一
+	params.Set("Timestamp", time.Now().UTC().Format("2006-01-02T15:04:05Z")) // 格式为：yyyy-MM-dd’T’HH:mm:ss’Z’；时区为：GMT
+	params.Set("SignatureMethod", "HMAC-SHA1")                               // 建议固定值：HMAC-SHA1
+	params.Set("SignatureVersion", "1.0")                                    // 建议固定值：1.0
+	params.Set("SignatureNonce", GetRandomString(12))                        // 用于请求的防重放攻击，每次请求唯一
 	params.Set("Format", "JSON")
 	params.Set("Action", "SendSms")                      // API的命名，固定值，如发送短信API的值为：SendSms
 	params.Set("Version", "2017-05-25")                  // API的版本，固定值，如短信API的值为：2017-05-25
